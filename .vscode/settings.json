@@ -1,6 +1,7 @@
 {
   "git.ignoreLimitWarning": true,
   "conventionalCommits.scopes": [
-    "app"
+    "app",
+    "configuration"
   ]
 }
