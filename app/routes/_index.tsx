@@ -6,6 +6,7 @@ import { SignInButton, SignedIn, SignedOut, useAuth } from '@clerk/react-router'
 import { useNavigate } from 'react-router'
 
 import { rootAuthLoader } from '@clerk/react-router/ssr.server'
+
 import appCSS from '../app.css?url'
 
 export const loader = async (args: Route.LoaderArgs) =>
@@ -34,15 +35,21 @@ export default function Home() {
 
   return (
     <div className="h-dvh flex flex-col items-center justify-center gap-y-4">
-      <QRCode value={'hello world!!!'} errorLevel="H" />
-      <Typography.Text className="dark:text-white">
+      <div style={{ backgroundColor: 'white' }}>
+        <QRCode value={'hello world!!!'} errorLevel="H" />
+      </div>
+      <Typography.Text className="dark:text-white!">
         Sample QR code
       </Typography.Text>
       <Button variant="solid" type="primary" onClick={handleButton404Clicked}>
         Hello
       </Button>
       <SignedOut>
-        <SignInButton />
+        <SignInButton>
+          <Button className="w-full" variant="outlined" color="primary">
+            Sign in
+          </Button>
+        </SignInButton>
       </SignedOut>
       <SignedIn>
         <Button

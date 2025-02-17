@@ -1,8 +1,6 @@
 @import "@fontsource/plus-jakarta-sans/latin.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 html,
 body {
