@@ -1,7 +1,8 @@
 import { rootAuthLoader } from '@clerk/react-router/ssr.server'
 import { type PropsWithChildren, useRef } from 'react'
+import '@ant-design/v5-patch-for-react-19'
 
-import { ConfigProvider } from 'antd'
+import { App as AntdApp, ConfigProvider } from 'antd'
 import {
   Links,
   Meta,
@@ -16,6 +17,7 @@ import { ErrorMessage } from './components'
 import type { Route } from './+types/root'
 
 import { ClerkProvider } from '@clerk/react-router'
+
 import appCSS from './app.css?url'
 
 export async function loader(args: Route.LoaderArgs) {
@@ -41,7 +43,7 @@ export function Layout({ children }: PropsWithChildren) {
             token: { colorPrimary: '#254C90', fontFamily: 'Plus Jakarta Sans' },
           }}
         >
-          {children}
+          <AntdApp>{children}</AntdApp>
         </ConfigProvider>
         <ScrollRestoration />
         <Scripts />

@@ -15,6 +15,11 @@ export default defineConfig(({ command }) => ({
       plugins: [tailwindcssPostcss],
     },
   },
+  ...(command === "build" && {
+    ssr: {
+      noExternal: true
+    }
+  }),
   plugins: [
     tailwindcssVite(),
     reactRouter(),

@@ -1,0 +1,133 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/join_waitlist.$": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/login.$": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/_index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/404": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/500": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "app/root.tsx",
+        "config": {}
+      },
+      "routes/join_waitlist.$": {
+        "id": "routes/join_waitlist.$",
+        "parentId": "root",
+        "file": "app/routes/join_waitlist.$.tsx",
+        "path": "join_waitlist/*",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/login.$": {
+        "id": "routes/login.$",
+        "parentId": "root",
+        "file": "app/routes/login.$.tsx",
+        "path": "login/*",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/_index": {
+        "id": "routes/_index",
+        "parentId": "root",
+        "file": "app/routes/_index.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/404": {
+        "id": "routes/404",
+        "parentId": "root",
+        "file": "app/routes/404.tsx",
+        "path": "404",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/500": {
+        "id": "routes/500",
+        "parentId": "root",
+        "file": "app/routes/500.tsx",
+        "path": "500",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/home/achmadk/PROJECTS/BP_ROYAL_RESIDENCE/management-system-app/app",
+    "basename": "/",
+    "buildDirectory": "/home/achmadk/PROJECTS/BP_ROYAL_RESIDENCE/management-system-app/build",
+    "future": {
+      "unstable_middleware": false,
+      "unstable_optimizeDeps": true,
+      "unstable_splitRouteModules": true,
+      "unstable_viteEnvironmentApi": false
+    },
+    "prerender": [
+      "/404",
+      "/500"
+    ],
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "routes/join_waitlist.$": {
+        "id": "routes/join_waitlist.$",
+        "parentId": "root",
+        "file": "routes/join_waitlist.$.tsx",
+        "path": "join_waitlist/*"
+      },
+      "routes/login.$": {
+        "id": "routes/login.$",
+        "parentId": "root",
+        "file": "routes/login.$.tsx",
+        "path": "login/*"
+      },
+      "routes/_index": {
+        "id": "routes/_index",
+        "parentId": "root",
+        "file": "routes/_index.tsx",
+        "index": true
+      },
+      "routes/404": {
+        "id": "routes/404",
+        "parentId": "root",
+        "file": "routes/404.tsx",
+        "path": "404"
+      },
+      "routes/500": {
+        "id": "routes/500",
+        "parentId": "root",
+        "file": "routes/500.tsx",
+        "path": "500"
+      }
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
