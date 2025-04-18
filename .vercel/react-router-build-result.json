@@ -78,6 +78,7 @@
       "unstable_middleware": false,
       "unstable_optimizeDeps": true,
       "unstable_splitRouteModules": true,
+      "unstable_subResourceIntegrity": false,
       "unstable_viteEnvironmentApi": false
     },
     "prerender": [
