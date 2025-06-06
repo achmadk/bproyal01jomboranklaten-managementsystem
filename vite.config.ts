@@ -2,7 +2,7 @@ import { reactRouter } from '@react-router/dev/vite'
 import tailwindcssPostcss from '@tailwindcss/postcss'
 import tailwindcssVite from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
-import { compression } from 'vite-plugin-compression2'
+import { compression, defineAlgorithm } from 'vite-plugin-compression2'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 import { compress } from '@mongodb-js/zstd'
@@ -26,20 +26,23 @@ export default defineConfig(({ command }) => ({
     tsconfigPaths(),
     ...(command === 'build'
       ? [
-          compression(),
           compression({
-            algorithm: 'brotliCompress',
-            filename: '[path][base].br',
+            algorithms: [
+              "gzip",
+              "brotliCompress",
+            ]
           }),
           compression({
-            async algorithm (buf, options) {
+            algorithms: [
               // @ts-expect-error
-              return await compress(buf, options.level)
-            },
-            compressionOptions: {
-              level: 20
-            },
-            filename: '[path][base].zst',
+              defineAlgorithm(
+                // @ts-expect-error
+                async (buffer: Buffer, options: { level: number }) =>
+                  await compress(buffer, options.level),
+                { level: 20 }
+              )
+            ],
+            filename: '[path][base].zst'
           })
         ]
       : []),

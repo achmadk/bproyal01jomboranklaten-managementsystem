@@ -122,6 +122,10 @@
         "path": "500"
       }
     },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
     "serverBuildFile": "index.js",
     "serverModuleFormat": "esm",
     "ssr": true
