@@ -11,39 +11,39 @@
   },
   "dependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
-    "@clerk/react-router": "^1.5.0",
-    "@fontsource/plus-jakarta-sans": "^5.2.5",
+    "@clerk/react-router": "^1.7.0",
+    "@fontsource/plus-jakarta-sans": "^5.2.6",
     "@mongodb-js/zstd": "^2.0.1",
-    "@react-router/fs-routes": "^7.6.2",
-    "@react-router/node": "^7.6.2",
-    "@react-router/serve": "^7.6.2",
-    "@refinedev/antd": "^5.46.1",
-    "@refinedev/core": "^4.57.9",
+    "@react-router/fs-routes": "^7.6.3",
+    "@react-router/node": "^7.6.3",
+    "@react-router/serve": "^7.6.3",
+    "@refinedev/antd": "^5.46.2",
+    "@refinedev/core": "^4.57.10",
     "@refinedev/react-router": "^1.0.1",
-    "@tailwindcss/postcss": "^4.1.8",
-    "@tailwindcss/vite": "^4.1.8",
-    "@vercel/react-router": "^1.1.2",
-    "antd": "^5.25.4",
-    "dotenv": "^16.5.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11",
+    "@vercel/react-router": "^1.2.1",
+    "antd": "^5.26.4",
+    "dotenv": "^17.2.0",
     "dotenv-cli": "^8.0.0",
     "isbot": "^5.1.28",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.6.2",
-    "vite-plugin-compression2": "^2.0.1"
+    "react-router": "^7.6.3",
+    "vite-plugin-compression2": "^2.2.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@react-router/dev": "^7.6.2",
-    "@types/node": "^22",
-    "@types/react": "^19.1.6",
+    "@biomejs/biome": "^2.1.1",
+    "@react-router/dev": "^7.6.3",
+    "@types/node": "^24",
+    "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
-    "postcss": "^8.5.4",
-    "tailwindcss": "^4.1.8",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5",
+    "vite": "^7.0.4",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "pnpm": {
@@ -53,7 +53,10 @@
       "@mongodb-js/zstd",
       "@tailwindcss/oxide",
       "esbuild"
-    ]
+    ],
+    "overrides": {
+      "vite": "npm:rolldown-vite@latest"
+    }
   },
   "trustedDependencies": [
     "@biomejs/biome",
@@ -62,5 +65,5 @@
     "@tailwindcss/oxide",
     "esbuild"
   ],
-  "packageManager": "pnpm@10.11.1"
+  "packageManager": "pnpm@10.13.1"
 }

@@ -1,6 +1,5 @@
-import { Typography, Layout } from "antd"
-
-import { useUser } from "@clerk/react-router"
+import { useUser } from '@clerk/react-router'
+import { Layout, Typography } from 'antd'
 
 const { Title } = Typography
 
@@ -10,7 +9,7 @@ export const DashboardContent = () => {
   return (
     <Layout>
       <Layout.Content>
-        <Title>{`Hello, ${user?.fullName ?? "-"}!`}</Title>
+        <Title>{`Hello, ${user?.fullName ?? '-'}!`}</Title>
       </Layout.Content>
     </Layout>
   )

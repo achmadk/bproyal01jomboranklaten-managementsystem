@@ -2,23 +2,20 @@ import { rootAuthLoader } from '@clerk/react-router/ssr.server'
 import { type PropsWithChildren, useRef } from 'react'
 import '@ant-design/v5-patch-for-react-19'
 
+import { ClerkProvider } from '@clerk/react-router'
 import { App as AntdApp, ConfigProvider } from 'antd'
 import {
+  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  isRouteErrorResponse,
 } from 'react-router'
 
-import { ErrorMessage } from './components'
-
 import type { Route } from './+types/root'
-
-import { ClerkProvider } from '@clerk/react-router'
-
 import appCSS from './app.css?url'
+import { ErrorMessage } from './components'
 
 export async function loader(args: Route.LoaderArgs) {
   return rootAuthLoader(args, { signInUrl: '/login' })
@@ -65,7 +62,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  // biome-ignore lint/style/noNonNullAssertion: <explanation>
+  // biome-ignore lint/style/noNonNullAssertion: must insert first argument
   const errorRef = useRef<HTMLElement>(null!)
 
   let message = 'Oops!'

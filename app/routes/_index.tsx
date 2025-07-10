@@ -1,17 +1,13 @@
-import type { Route } from './+types/_index'
-
-import { Button, Layout, QRCode, Typography } from 'antd'
-
-import { SignInButton, SignedIn, SignedOut } from '@clerk/react-router'
-import { useNavigate } from 'react-router'
-
+import { SignedIn, SignedOut, SignInButton } from '@clerk/react-router'
 import { rootAuthLoader } from '@clerk/react-router/ssr.server'
-
-import { LandingHeader } from '~/models/landing/components/03-organisms/Header'
+import { Button, Layout, QRCode, Typography } from 'antd'
+import { useNavigate } from 'react-router'
+import { DashboardContent } from '~/models/dashboard/components/03-organisms/Content'
 import { LandingFooter } from '~/models/landing/components/03-organisms/Footer'
+import { LandingHeader } from '~/models/landing/components/03-organisms/Header'
 
 import appCSS from '../app.css?url'
-import { DashboardContent } from '~/models/dashboard/components/03-organisms/Content'
+import type { Route } from './+types/_index'
 
 const { Content } = Layout
 
@@ -25,7 +21,11 @@ export const links: Route.LinksFunction = () => [
 export function meta() {
   return [
     { title: 'BP Royal Residence Jomboran Klaten Management System' },
-    { name: 'description', content: 'Welcome to BP Royal Residence Jomboran Klaten Management System!' },
+    {
+      name: 'description',
+      content:
+        'Welcome to BP Royal Residence Jomboran Klaten Management System!',
+    },
   ]
 }
 
@@ -39,12 +39,17 @@ export default function Home() {
   return (
     <Layout className="layout">
       <LandingHeader />
-      <Content style={{ height: 'calc(100dvh - (70px + 4rem))', marginTop: '4rem', overflow: 'auto' }}>
+      <Content
+        style={{
+          height: 'calc(100dvh - (70px + 4rem))',
+          marginTop: '4rem',
+          overflow: 'auto',
+        }}
+      >
         <SignedIn>
           <DashboardContent />
         </SignedIn>
         <SignedOut>
-
           <div className="flex flex-col items-center justify-center gap-y-4">
             <div style={{ backgroundColor: 'white' }}>
               <QRCode value={'hello world!!!'} errorLevel="H" />
@@ -52,7 +57,11 @@ export default function Home() {
             <Typography.Text className="dark:text-white!">
               Sample QR code
             </Typography.Text>
-            <Button variant="solid" type="primary" onClick={handleButton404Clicked}>
+            <Button
+              variant="solid"
+              type="primary"
+              onClick={handleButton404Clicked}
+            >
               Hello
             </Button>
             <SignInButton>
